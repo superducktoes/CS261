@@ -1,7 +1,8 @@
 /* CS261- Assignment 1 - Q.3*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Nick Roy
+ * Date: 9/18/2017
+ * Solution description: Create n number of student structs and then sort based on
+ * their test scores.
  */
  
 #include <stdio.h>

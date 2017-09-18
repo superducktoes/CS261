@@ -1,7 +1,8 @@
 /* CS261- Assignment 1 - Q.2*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Nick Roy
+ * Date: 9/18/2017
+ * Solution description: Using two pointers update the created int's and test the third to show
+ * the scope of foo()
  */
  
 #include <stdio.h>

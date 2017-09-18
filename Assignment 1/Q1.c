@@ -1,12 +1,15 @@
 /* CS261- Assignment 1 - Q.1*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Nick Roy
+ * Date: 9/18/2017
+ * Solution description: Initialize struct student and dynamically create ten students
+ * to then fill with random information for their test scores and id.
+ * Loop through the students created to also print out a summary and find the high/low and 
+ * average test scores.
  */
  
 #include <stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdlib.h>
+#include <math.h>
 #include <time.h>
 struct student{
   int id;

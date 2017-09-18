@@ -1,7 +1,7 @@
 /* CS261- Assignment 1 - Q. 0*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Nick Roy
+ * Date: 9/18/2017
+ * Solution description: Use pointers and initial variable to point to value and address
  */
  
 #include <stdio.h>
