@@ -56,5 +56,6 @@ Temporary Items
 .apdisk
 
 # my own ignores
+*.doc
 *.pdf
 *.zip
