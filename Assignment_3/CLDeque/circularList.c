@@ -1,3 +1,11 @@
+/*******************************************************
+ * 
+ * Author: Nick Roy
+ * Date: 10/10/2017
+ *
+ * Description: circularList.c circular list implementation.
+ *  
+ *********************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

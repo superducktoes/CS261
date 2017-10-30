@@ -1,3 +1,11 @@
+/*******************************************************
+ * 
+ * Author: Nick Roy
+ * Date: 10/10/2017
+ *
+ * Description: linkedList.c linked list implementation.
+ *  
+ *********************************************************/
 #include "linkedList.h"
 #include <assert.h>
 #include <stdlib.h>
