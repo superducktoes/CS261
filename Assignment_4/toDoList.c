@@ -84,14 +84,16 @@ void loadList(DynArr *heap, FILE *filePtr)
 void printList(DynArr *heap)
 {
     /* FIX ME  */
-    int i;
-
-    sortHeap(heap);
-    printf("Task    -    Priority");
-    printf("\n---------------------\n");
-    for(i = 0; i < heap->size; i++) {
-      printf("%s  -  %d\n", heap->data[i].description, heap->data[i].priority);
-    }
+  assert(heap != 0);
+  int i;
+  
+  sortHeap(heap);
+  printf("Task    -    Priority");
+  printf("\n---------------------\n");
+  for(i = 0; i < heap->size; i++) {
+    printf("%s  -  %d\n", heap->data[i].description, heap->data[i].priority);
+  }
+  
 }
 
 /*  Compare two tasks by priority

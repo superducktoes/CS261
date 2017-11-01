@@ -142,7 +142,7 @@ void addDynArr(DynArr *v, TYPE val)
 */
 TYPE getDynArr(DynArr *v, int pos)
 {
-	assert(pos < v->size);
+	assert(pos <= v->size);
 	assert(pos >= 0);
 	
 	return v->data[pos];
@@ -179,8 +179,8 @@ void swapDynArr(DynArr *v, int i, int  j)
 {
 	TYPE  temp;
 	
-	assert(i < v->size);
-	assert(j < v->size);
+	assert(i <= v->size);
+	assert(j <= v->size);
 	
 	temp = v->data[i];
 	v->data[i] = v->data[j];
@@ -247,10 +247,10 @@ void _adjustHeap(DynArr *heap, int max, int pos);
 */
 int _smallerIndexHeap(DynArr *heap, int i, int j)
 {
-	assert(i < sizeDynArr(heap));
-	assert(j < sizeDynArr(heap));
+	assert(i <= sizeDynArr(heap));
+	assert(j <= sizeDynArr(heap));
 
-	if (compare(getDynArr(heap, i), getDynArr(heap, j)) <= 0) {
+	if (compare(getDynArr(heap, i), getDynArr(heap, j)) < 0) {
 		return i;
 	} else {
 		return j;
@@ -266,7 +266,7 @@ int _smallerIndexHeap(DynArr *heap, int i, int j)
 TYPE getMinHeap(DynArr *heap)
 {
 	/* FIXME */
-	assert( heap != NULL);
+	assert( heap != 0 );
 	TYPE temp;
 	temp = heap->data[0];
 
@@ -283,7 +283,7 @@ TYPE getMinHeap(DynArr *heap)
 void addHeap(DynArr *heap, TYPE node)
 {
 	/* FIXME */
-	assert( heap != NULL);
+	assert( heap != 0 );
 	int size = sizeDynArr(heap);
 
 	addDynArr(heap, node);
@@ -304,24 +304,25 @@ void _adjustHeap(DynArr *heap, int max, int pos)
 	/* FIXME */
 	int left, right, min;
 	left = (pos * 2) + 1;
-	right = (pos * 2) + 1;
+	right = (pos * 2) + 2;
 
 	assert(heap != 0);
 	assert(max <= sizeDynArr(heap));
 
 	if(right < max) {
-		if(left < max) {
-			min = _smallerIndexHeap(heap,left,right);
+		min = _smallerIndexHeap(heap,left,right);		
+		if(_smallerIndexHeap(heap,pos,left) == min) {
 			swapDynArr(heap, min, pos);
 			_adjustHeap(heap, max, min);
-		} else if(left <= max) {
-			if(_smallerIndexHeap(heap, pos, left) == left) {
-				swapDynArr(heap, left, pos);
-			}
+		}
+	} else if(left <= max) {
+		if(_smallerIndexHeap(heap, pos, left) == left) {
+			swapDynArr(heap, left, pos);
 			_adjustHeap(heap, max, left);
 		}
-	}  	
-}
+	}
+}	
+
 
 /*	Remove the first node, which has the min priority, from the heap
 	
@@ -332,7 +333,7 @@ void _adjustHeap(DynArr *heap, int max, int pos)
 void removeMinHeap(DynArr *heap)
 {
 	/* FIXME */
-	assert( heap != NULL );
+	assert( heap != 0 );
 	int last = sizeDynArr(heap) - 1;
 
 	heap->data[0] = heap->data[last];
@@ -352,13 +353,12 @@ void removeMinHeap(DynArr *heap)
 void _buildHeap(DynArr *heap)
 {
 	/* FIXME */
-	assert( heap != NULL);
-
-	int firstNode = (heap->size / 2) - 1;
+	assert( heap != 0);
+	int max = sizeDynArr(heap);
 	int i;
 
-	for(i = firstNode; i >= 0; i--) {
-		_adjustHeap(heap, heap->size, i);
+	for(i=(max/2)-1; i>=0; i--){
+		_adjustHeap(heap, max, i);
 	}
 }
 /* 
@@ -372,14 +372,14 @@ void _buildHeap(DynArr *heap)
 void sortHeap(DynArr *heap)
 {
 	/*FIXME*/
-	assert( heap != NULL );
+	assert( heap != 0 );
 	int last = sizeDynArr(heap) - 1;
-	int i = 0;
+	int i;
 
 	_buildHeap(heap);
 
 	for(i = last; i > 0; i--) {
-		swapDynArr(heap, 0, last);
-		_adjustHeap(heap, last, 0);
+		swapDynArr(heap, 0, i);
+		_adjustHeap(heap, i, 0);
 	}
 }
