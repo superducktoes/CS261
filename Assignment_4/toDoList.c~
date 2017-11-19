@@ -1,5 +1,3 @@
-/* Author: Nick Roy */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -97,7 +95,7 @@ void printList(DynArr *heap)
 
   for(i = heap->size - 1; i >= 0; i--) {
     TYPE task = getDynArr(heap,i);
-    printf("%d\t - \t%s\n", heap->data[i].priority, heap->data[i].description);
+    printf("%d\t - \t%s", heap->data[i].priority, heap->data[i].description);
     addHeap(temp,task);
   }
   /* dont delete or the tree sorts differently */

@@ -1,4 +1,5 @@
 /*	dynArray.c: Dynamic Array implementation. */
+/* Author: Nick Roy */
 #include <assert.h>
 #include <stdlib.h>
 #include "dynArray.h"
@@ -142,7 +143,7 @@ void addDynArr(DynArr *v, TYPE val)
 */
 TYPE getDynArr(DynArr *v, int pos)
 {
-	assert(pos <= v->size);
+	assert(pos < v->size);
 	assert(pos >= 0);
 	
 	return v->data[pos];
@@ -179,8 +180,8 @@ void swapDynArr(DynArr *v, int i, int  j)
 {
 	TYPE  temp;
 	
-	assert(i <= v->size);
-	assert(j <= v->size);
+	assert(i < v->size);
+	assert(j < v->size);
 	
 	temp = v->data[i];
 	v->data[i] = v->data[j];
@@ -247,10 +248,10 @@ void _adjustHeap(DynArr *heap, int max, int pos);
 */
 int _smallerIndexHeap(DynArr *heap, int i, int j)
 {
-	assert(i <= sizeDynArr(heap));
-	assert(j <= sizeDynArr(heap));
+	assert(i < heap->size);
+	assert(j < heap->size);
 
-	if (compare(getDynArr(heap, i), getDynArr(heap, j)) < 0) {
+	if (compare(getDynArr(heap, i), getDynArr(heap, j)) <= 0) {
 		return i;
 	} else {
 		return j;
@@ -283,11 +284,26 @@ TYPE getMinHeap(DynArr *heap)
 void addHeap(DynArr *heap, TYPE node)
 {
 	/* FIXME */
-	assert( heap != 0 );
+	/*assert( heap != 0 );
 	int size = sizeDynArr(heap);
 
 	addDynArr(heap, node);
-	_adjustHeap(heap,size,0);
+	_adjustHeap(heap,size,0);*/
+	int parent;
+	int nodeCurrent;
+	assert(heap != 0);
+	nodeCurrent = sizeDynArr(heap);
+	addDynArr(heap,node);
+
+	while(nodeCurrent != 0) {
+		parent = ((nodeCurrent - 1)/2);
+		if(compare(getDynArr(heap,nodeCurrent), getDynArr(heap,parent)) == -1) {
+			swapDynArr(heap,nodeCurrent,parent);
+			nodeCurrent = parent;
+		} else {
+			return;
+		}
+	}
 
 }
 
@@ -311,12 +327,12 @@ void _adjustHeap(DynArr *heap, int max, int pos)
 
 	if(right < max) {
 		min = _smallerIndexHeap(heap,left,right);		
-		if(_smallerIndexHeap(heap,pos,left) == min) {
-			swapDynArr(heap, min, pos);
+		if(compare(getDynArr(heap,min), getDynArr(heap,pos)) == -1) {
+			swapDynArr(heap, pos, min);
 			_adjustHeap(heap, max, min);
 		}
-	} else if(left <= max) {
-		if(_smallerIndexHeap(heap, pos, left) == left) {
+	} else if(left < max) {
+		if(compare(getDynArr(heap,left), getDynArr(heap,pos)) == -1) {
 			swapDynArr(heap, left, pos);
 			_adjustHeap(heap, max, left);
 		}
@@ -354,10 +370,10 @@ void _buildHeap(DynArr *heap)
 {
 	/* FIXME */
 	assert( heap != 0);
-	int max = sizeDynArr(heap);
+	int max = sizeDynArr(heap) -1;
 	int i;
 
-	for(i=(max/2)-1; i>=0; i--){
+	for(i = (max/2)-1; i>=0; i--){
 		_adjustHeap(heap, max, i);
 	}
 }

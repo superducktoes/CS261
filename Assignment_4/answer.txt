@@ -1,4 +1,4 @@
-pi@raspberrypi:~/cs_261/assignment_4 $ ./prog
+flip3 ~/cs261/assignment_4 1012$ ./prog
 
 
 ** TO-DO LIST APPLICATION **
@@ -11,34 +11,10 @@ Press:
 'r' to remove the first task
 'p' to print the list
 'e' to exit the program
-g
-Your to-do list is empty!
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
 a
-Please enter the task description: task 1
-Please enter the task priority (0-999): 3
-The task 'task 1' has been added to your to-do list.
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-a
-Please enter the task description: task 2
+Please enter the task description: test1
 Please enter the task priority (0-999): 1
-The task 'task 2' has been added to your to-do list.
+The task 'test1' has been added to your to-do list.
 
 Press:
 'l' to load to-do list from a file
@@ -49,9 +25,59 @@ Press:
 'p' to print the list
 'e' to exit the program
 a
-Please enter the task description: task 3
-Please enter the task priority (0-999): 101
-The task 'task 3' has been added to your to-do list.
+Please enter the task description: test2
+Please enter the task priority (0-999): 2
+The task 'test2' has been added to your to-do list.
+
+Press:
+'l' to load to-do list from a file
+'s' to save to-do list to a file
+'a' to add a new task
+'g' to get the first task
+'r' to remove the first task
+'p' to print the list
+'e' to exit the program
+p
+Priority -      Task
+---------------------
+1        -      test1
+2        -      test2
+Press:
+'l' to load to-do list from a file
+'s' to save to-do list to a file
+'a' to add a new task
+'g' to get the first task
+'r' to remove the first task
+'p' to print the list
+'e' to exit the program
+g
+Your first task is: test1
+
+Press:
+'l' to load to-do list from a file
+'s' to save to-do list to a file
+'a' to add a new task
+'g' to get the first task
+'r' to remove the first task
+'p' to print the list
+'e' to exit the program
+a
+Please enter the task description: test3
+Please enter the task priority (0-999): 3
+The task 'test3' has been added to your to-do list.
+
+Press:
+'l' to load to-do list from a file
+'s' to save to-do list to a file
+'a' to add a new task
+'g' to get the first task
+'r' to remove the first task
+'p' to print the list
+'e' to exit the program
+a
+Please enter the task description: test0
+Please enter the task priority (0-999): 0
+The task 'test0' has been added to your to-do list.
 
 Press:
 'l' to load to-do list from a file
@@ -62,7 +88,7 @@ Press:
 'p' to print the list
 'e' to exit the program
 g
-Your first task is: task 2
+Your first task is: test0
 
 Press:
 'l' to load to-do list from a file
@@ -72,11 +98,13 @@ Press:
 'r' to remove the first task
 'p' to print the list
 'e' to exit the program
-a
-Please enter the task description: task 4
-Please enter the task priority (0-999): 0
-The task 'task 4' has been added to your to-do list.
-
+p
+Priority -      Task
+---------------------
+0        -      test0
+1        -      test1
+2        -      test2
+3        -      test3
 Press:
 'l' to load to-do list from a file
 's' to save to-do list to a file
@@ -97,11 +125,9 @@ Press:
 'r' to remove the first task
 'p' to print the list
 'e' to exit the program
-e
-Bye!
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-pi@raspberrypi:~/cs_261/assignment_4 $ ./prog
+flip3 ~/cs261/assignment_4 1013$ ./prog
 
 
 ** TO-DO LIST APPLICATION **
@@ -127,68 +153,8 @@ Press:
 'p' to print the list
 'e' to exit the program
 g
-Your first task is: task 2
+Your first task is: test0
 
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-r
-Your first task 'task 2
-' has been removed from the list.
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-g
-Your first task is: task 4
-
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-r
-Your first task 'task 4
-' has been removed from the list.
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-g
-Your first task is: task 1
-
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-r
-Your first task 'task 1
-' has been removed from the list.
 
 Press:
 'l' to load to-do list from a file
@@ -199,21 +165,15 @@ Press:
 'p' to print the list
 'e' to exit the program
 p
-Task    -    Priority
+Priority -      Task
 ---------------------
-task 3
-  -  101
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-g
-Your first task is: task 3
+0        -      test0
 
+1        -      test1
+
+2        -      test2
+
+3        -      test3
 
 Press:
 'l' to load to-do list from a file
@@ -223,29 +183,3 @@ Press:
 'r' to remove the first task
 'p' to print the list
 'e' to exit the program
-r
-Your first task 'task 3
-' has been removed from the list.
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-r
-Your to-do list is empty!
-
-Press:
-'l' to load to-do list from a file
-'s' to save to-do list to a file
-'a' to add a new task
-'g' to get the first task
-'r' to remove the first task
-'p' to print the list
-'e' to exit the program
-e
-Bye!
-
