@@ -1,0 +1,21 @@
+/*
+ * CS 261 Data Structure
+ * Assignment 6
+ * Name: Nick Roy
+ * Date: 11/27/2017
+ */
+ 
+1. How is the graph stored in the provided code? Is it represented as an adjacency matrix or list?
+Stored in a list.
+
+2. Which of the 3 graphs are connected? How can you tell?
+Graphs 2 and 3 are connected, and graph 1 is not. Graph 1 contained verticies without a path while 2 and 3 did.
+
+3. Imagine that we ran each depth-first and breadth-first searches in the othe direction (from destination to source). Would the output change at all? Would the output change if the graphs were directed graphs?
+The output would not change on an undirected graph. It may change on a directed graph as some of the verticies may not be reachable in the opposite direction.
+
+4. What are some pros and cons of DFS vs BFS? When would you use one over the other?
+DFS will use less memory than a BFS, however a BFS will explore all possible options. This means that while a DFS will find a path and use less memory it may not be the shortest path. BFS search will find the shortest path and would be used if absolutely necessary to find the shortest path as opposed to finding any path.
+
+5. What is the Big O execution time to determine if a vertex is reachable from another vertex?
+O(n) where n is the number of vertices and edges.
